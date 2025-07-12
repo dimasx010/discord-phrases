@@ -25,7 +25,6 @@ jobs:
         run: |
         
           echo "Run my first command Python"
-          echo "Token es: $DISCORD_BOT_TOKEN"
           echo "Ejecución: $(date)"
           pip install -r requirements.txt
           python main.py

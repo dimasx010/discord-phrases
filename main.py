@@ -40,6 +40,7 @@ async def on_ready():
             phrase = get_random_phrase()
             mensaje = f">>> {phrase['title']}\n— *{phrase['author']}*"
             await channel.send(mensaje)
+            print(f">>> {phrase['title']}\n— *{phrase['author']}*")
     await client.close()
 
 client.run(TOKEN, log_handler=handler, log_level=logging.DEBUG)
