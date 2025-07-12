@@ -6,7 +6,9 @@ import json
 import random
 import os
 
-#load_dotenv()
+if os.getenv("GITHUB_ACTIONS") != "true":
+    load_dotenv()
+
 ### LOGIC FOR GET PHRASE
 def get_random_phrase():
     with open("phrases.json", "r", encoding="utf-8") as f:
@@ -14,7 +16,7 @@ def get_random_phrase():
     return random.choice(phrases)
 
 ### Logic for DISCORD MESSAGE
-TOKEN = os.getenv('DISCORD_TOKEN')
+TOKEN = os.getenv('DISCORD_BOT_TOKEN')
 CHANNEL_ID = int(os.getenv("DISCORD_CHANNEL_ID")) 
 
 print("starting Script Discord....")
