@@ -1,0 +1,28 @@
+# Ignora solo el archivo de entorno principal
+.env
+
+# Otros patrones comunes para proyectos Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+ENV/
+
+# Archivos de distribución
+build/
+dist/
+*.egg-info/
+
+# Cache de pruebas
+.pytest_cache/
+
+# Configuración de VS Code
+.vscode/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
