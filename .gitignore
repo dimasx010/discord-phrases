@@ -11,6 +11,7 @@ venv/
 .venv/
 env/
 ENV/
+discord.log
 
 # Archivos de distribución
 build/

@@ -38,7 +38,7 @@ async def on_ready():
     channel = client.get_channel(CHANNEL_ID)
     if channel:
             phrase = get_random_phrase()
-            mensaje = f'**"{phrase["title"]}"**\n— *{phrase["author"]}*'
+            mensaje = f">>> {phrase['title']}\n— *{phrase['author']}*"
             await channel.send(mensaje)
     await client.close()
 
