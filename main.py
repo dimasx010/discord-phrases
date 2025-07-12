@@ -6,7 +6,7 @@ import json
 import random
 import os
 
-load_dotenv()
+#load_dotenv()
 ### LOGIC FOR GET PHRASE
 def get_random_phrase():
     with open("phrases.json", "r", encoding="utf-8") as f:

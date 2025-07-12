@@ -23,7 +23,9 @@ jobs:
             echo "DISCORD_CHANNEL_ID=${{ secrets.DISCORD_CHANNEL_ID }}" >> $GITHUB_ENV
       - name: 🔧 Run command  # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
         run: |
+        
           echo "Run my first command Python"
+          echo "Token es: $DISCORD_BOT_TOKEN"
           echo "Ejecución: $(date)"
           pip install -r requirements.txt
           python main.py
