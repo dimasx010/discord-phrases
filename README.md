@@ -1,9 +1,9 @@
-# 📘 discord-phrases  
+# 📘 Discord Phrases  
 _Elegant, lightweight Phrase Manager for Discord bots (Python)_
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)  
 ![License](https://img.shields.io/badge/License-MIT-green.svg)  
-![GitHub Actions](https://img.shields.io/github/actions/workflow/status/USER/discord-phrases/ci.yml?label=CI)
+![GitHub Actions](https://img.shields.io/github/actions/workflow/status/dimasx010/discord-phrases/discord-phrase.yml?label=CI)
 
 ---
 
@@ -99,15 +99,7 @@ jobs:
       run: flake8 src
 ```
 
-
-
----
-![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)  
-![License](https://img.shields.io/badge/License-MIT-green.svg)  
-![GitHub Actions](https://img.shields.io/github/actions/workflow/status/USER/discord-phrases/ci.yml?label=CI)
 ---
 
 ## 📜 License  
 Licensed under the **MIT License**.
-
-
