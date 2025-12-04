@@ -1,5 +1,15 @@
 # 📘 Discord Phrases  
-_Elegant, lightweight Phrase Manager for Discord bots (Python)_
+_Elegant, lightweight Phrase Manager for sending phrases to Discord(Python)_
+- Run workflows every day (Workflow Job)
+- Select phrase from ``phrases.json``
+- Send a message to a specific channel of a Discord server
+
+## 🖼 Preview
+<img width="527" height="111" alt="image" src="https://github.com/user-attachments/assets/58041e39-492a-4749-8f09-e1e4873d1d44" />
+
+
+
+-
 
 ---
 ![Deploy](https://github.com/dimasx010/discord-phrases/actions/workflows/discord-phrase.yml/badge.svg)
@@ -102,6 +112,7 @@ jobs:
 
 ## 📜 License  
 Licensed under the **MIT License**.
+
 
 
 
