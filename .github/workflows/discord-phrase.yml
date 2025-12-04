@@ -1,4 +1,4 @@
-name: 1-Run command Discord Mesaage
+name: Run Command
 on:
     schedule:
         - cron: '0 10 * * *' # At every hour
