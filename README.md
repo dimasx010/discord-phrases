@@ -2,7 +2,7 @@
 _Elegant, lightweight Phrase Manager for Discord bots (Python)_
 
 ---
-![Deploy](https://github.com/dimasx010/current-time/actions/workflows/discord-phrase.yml/badge.svg)
+![Deploy](https://github.com/dimasx010/discord-phrases/actions/workflows/discord-phrase.yml/badge.svg)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 ---
 
@@ -102,5 +102,6 @@ jobs:
 
 ## 📜 License  
 Licensed under the **MIT License**.
+
 
 
