@@ -31,14 +31,11 @@ Built for clarity, simplicity, and easy integration into any Discord.py-based pr
 ## 📂 Project Structure  
 ```
 discord-phrases/
-│── phrases/
-│   └── phrases.json
-│── src/
-│   └── phrases.py
-│── tests/
+│── phrases.json
+│── main.py
 │── .github/
 │   └── workflows/
-│       └── ci.yml
+│       └── discord-phrase.yml
 └── README.md
 ```
 
@@ -61,57 +58,41 @@ pip install -r requirements.txt
 
 ---
 
-## 📦 Usage Example  
-```python
-from phrases import PhraseManager
-
-phrases = PhraseManager("phrases/phrases.json")
-
-print(phrases.get_random())
-print(phrases.get("greeting"))
-```
-
----
-
 ## 🔄 GitHub Actions (CI)  
-Example workflow for `.github/workflows/ci.yml`:
+Example workflow for `.github/workflows/discord-phrase.yml`:
 
 ```yaml
-name: CI
-
+name: Run Command
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+    schedule:
+        - cron: '0 10 * * *' # At every hour
+    workflow_dispatch: # manually
+permissions:
+  contents: write
 jobs:
-  build:
+  Build-and-run-python:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-
-    - name: Run tests
-      run: pytest -q
-
-    - name: Lint
-      run: flake8 src
+      - name: 🛎️ Checkout 
+        uses: actions/checkout@v4
+        
+      - name: ⚙ Setup python 
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9' # install the python version needed
+      - name: Export env variable
+        run: |
+            echo "DISCORD_BOT_TOKEN=${{ secrets.DISCORD_BOT_TOKEN }}" >> $GITHUB_ENV
+            echo "DISCORD_CHANNEL_ID=${{ secrets.DISCORD_CHANNEL_ID }}" >> $GITHUB_ENV
+      - name: 🔧 Run command  # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          echo "Ejecución: $(date)"
+          pip install -r requirements.txt -q
+          python main.py
 ```
 
 ---
 
 ## 📜 License  
-Licensed under the **MIT License**.
-
-
-
-
-
-
+Licensed under the **MIT License**
